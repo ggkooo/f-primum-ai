@@ -15,7 +15,7 @@ function AuthenticatedRoute({ children }: { children: ReactElement }) {
 
 function PublicOnlyRoute({ children }: { children: ReactElement }) {
   if (isAuthenticated()) {
-    return <Navigate to="/" replace />
+    return <Navigate to="/chat" replace />
   }
 
   return children
@@ -25,8 +25,17 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<Navigate to="/chat" replace />} />
         <Route
-          path="/"
+          path="/chat"
+          element={
+            <AuthenticatedRoute>
+              <ChatPage />
+            </AuthenticatedRoute>
+          }
+        />
+        <Route
+          path="/chat/:id"
           element={
             <AuthenticatedRoute>
               <ChatPage />
@@ -49,8 +58,7 @@ function App() {
             </PublicOnlyRoute>
           }
         />
-        <Route path="/chat" element={<Navigate to="/" replace />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<Navigate to="/chat" replace />} />
       </Routes>
     </BrowserRouter>
   )

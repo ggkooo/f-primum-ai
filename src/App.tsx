@@ -1,43 +1,18 @@
-import logo from './assets/img/logo.png'
-import { MainPanel } from './components/MainPanel'
-import { Sidebar } from './components/Sidebar'
-
-const chats = [
-  { id: 1, title: 'Project Alpha Brainstorm' },
-  { id: 2, title: 'Marketing Strategy' },
-  { id: 3, title: 'Code Refactor' },
-]
-
-const prompts = [
-  { icon: 'lightbulb', text: 'Get fresh perspectives on tricky problems' },
-  { icon: 'psychology', text: 'Brainstorm creative ideas' },
-  { icon: 'edit_note', text: 'Rewrite message for maximum impact' },
-  { icon: 'summarize', text: 'Summarize key points' },
-]
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { ChatPage } from './screens/ChatPage'
+import { LoginPage } from './screens/LoginPage'
+import { RegisterPage } from './screens/RegisterPage'
 
 function App() {
   return (
-    <div className="h-screen w-screen overflow-hidden bg-[#f3f4f6]">
-      <main className="mesh-gradient relative flex h-full w-full overflow-hidden">
-        <Sidebar
-          logoSrc={logo}
-          appName="PrimumAI"
-          chats={chats}
-          userInitial="M"
-          userName="Milovan"
-          planName="Personal Plan"
-        />
-
-        <MainPanel
-          logoSrc={logo}
-          appName="PrimumAI"
-          greeting="Good evening, Milovan"
-          title="Can I help you with anything?"
-          prompts={prompts}
-          composerPlaceholder="How can PrimumAI help you today?"
-        />
-      </main>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Navigate to="/login" replace />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/chat" element={<ChatPage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

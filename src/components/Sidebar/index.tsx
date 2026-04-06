@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from 'react'
+
 type ChatItem = {
   id: number | string
   title: string
@@ -13,6 +15,8 @@ type SidebarProps = {
   onChatSelect?: (chatId: ChatItem['id']) => void
   onChatDelete?: (chatId: ChatItem['id']) => void
   onNewChat?: () => void
+  onOpenSettings?: () => void
+  onLogout?: () => void
 }
 
 export function Sidebar({
@@ -25,7 +29,30 @@ export function Sidebar({
   onChatSelect,
   onChatDelete,
   onNewChat,
+  onOpenSettings,
+  onLogout,
 }: SidebarProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const menuContainerRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (!menuContainerRef.current) {
+        return
+      }
+
+      if (!menuContainerRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false)
+      }
+    }
+
+    window.addEventListener('mousedown', handleOutsideClick)
+
+    return () => {
+      window.removeEventListener('mousedown', handleOutsideClick)
+    }
+  }, [])
+
   return (
     <aside className="hidden h-full w-72 shrink-0 flex-col border-r border-white/20 bg-white/30 backdrop-blur-md md:flex">
       <div className="px-6 py-5">
@@ -67,16 +94,53 @@ export function Sidebar({
           <span className="material-symbols-outlined text-base">add</span>
           New Chat
         </button>
-        <button className="flex w-full items-center gap-3 rounded-xl p-2 text-left transition hover:bg-white/25">
-          <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full border-2 border-white bg-[#9ffe9e] font-bold text-[#00631d]">
-            {userInitial}
-          </div>
-          <div className="min-w-0">
-            <p className="truncate text-sm font-semibold text-[#26312b]">{userName}</p>
-            <p className="truncate text-[10px] text-zinc-500">{planName}</p>
-          </div>
-          <span className="material-symbols-outlined ml-auto text-zinc-500">more_vert</span>
-        </button>
+        <div className="relative flex items-center gap-1" ref={menuContainerRef}>
+          <button className="flex min-w-0 flex-1 items-center gap-3 rounded-xl p-2 text-left transition hover:bg-white/25">
+            <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full border-2 border-white bg-[#9ffe9e] font-bold text-[#00631d]">
+              {userInitial}
+            </div>
+            <div className="min-w-0">
+              <p className="truncate text-sm font-semibold text-[#26312b]">{userName}</p>
+              <p className="truncate text-[10px] text-zinc-500">{planName}</p>
+            </div>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setIsMenuOpen((value) => !value)}
+            className="grid h-9 w-9 place-items-center rounded-lg text-zinc-500 transition hover:bg-white/25 hover:text-zinc-700"
+            aria-label="Open account menu"
+          >
+            <span className="material-symbols-outlined text-[20px]">more_vert</span>
+          </button>
+
+          {isMenuOpen ? (
+            <div className="absolute bottom-12 right-0 z-30 w-44 rounded-xl border border-white/50 bg-white/90 p-1.5 shadow-[0_18px_40px_rgba(0,0,0,0.12)] backdrop-blur-md">
+              <button
+                type="button"
+                onClick={() => {
+                  setIsMenuOpen(false)
+                  onOpenSettings?.()
+                }}
+                className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm text-[#26312b] transition hover:bg-[#eef8ef]"
+              >
+                <span className="material-symbols-outlined text-[18px]">settings</span>
+                Settings
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setIsMenuOpen(false)
+                  onLogout?.()
+                }}
+                className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm text-red-600 transition hover:bg-red-50"
+              >
+                <span className="material-symbols-outlined text-[18px]">logout</span>
+                Logout
+              </button>
+            </div>
+          ) : null}
+        </div>
       </div>
     </aside>
   )

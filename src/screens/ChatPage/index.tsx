@@ -1,6 +1,8 @@
+import { useNavigate } from 'react-router-dom'
 import logo from '../../assets/img/logo.png'
 import { MainPanel } from '../../components/MainPanel'
 import { Sidebar } from '../../components/Sidebar'
+import { clearAuthSession, getAuthSession } from '../../services/auth'
 
 const chats = [
   { id: 1, title: 'Project Alpha Brainstorm' },
@@ -16,6 +18,16 @@ const prompts = [
 ]
 
 export function ChatPage() {
+  const navigate = useNavigate()
+  const authSession = getAuthSession()
+  const userName = authSession?.user.name ?? 'User'
+  const userInitial = userName.charAt(0).toUpperCase() || 'U'
+
+  const handleLogout = () => {
+    clearAuthSession()
+    navigate('/login', { replace: true })
+  }
+
   return (
     <div className="h-screen w-screen overflow-hidden bg-[#f3f4f6]">
       <main className="mesh-gradient relative flex h-full w-full overflow-hidden">
@@ -23,15 +35,19 @@ export function ChatPage() {
           logoSrc={logo}
           appName="PrimumAI"
           chats={chats}
-          userInitial="M"
-          userName="Milovan"
+          userInitial={userInitial}
+          userName={userName}
           planName="Personal Plan"
+          onOpenSettings={() => {
+            // Settings screen is not implemented yet.
+          }}
+          onLogout={handleLogout}
         />
 
         <MainPanel
           logoSrc={logo}
           appName="PrimumAI"
-          greeting="Good evening, Milovan"
+          greeting={`Good evening, ${userName}`}
           title="Can I help you with anything?"
           prompts={prompts}
           composerPlaceholder="How can PrimumAI help you today?"

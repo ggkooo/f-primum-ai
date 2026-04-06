@@ -6,13 +6,38 @@ type AuthTextFieldProps = {
   type: 'text' | 'email'
   placeholder: string
   autoComplete: string
+  name?: string
+  value?: string
+  required?: boolean
+  disabled?: boolean
+  onChange?: (value: string) => void
 }
 
-export function AuthTextField({ label, type, placeholder, autoComplete }: AuthTextFieldProps) {
+export function AuthTextField({
+  label,
+  type,
+  placeholder,
+  autoComplete,
+  name,
+  value,
+  required,
+  disabled,
+  onChange,
+}: AuthTextFieldProps) {
   return (
     <div>
       <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-zinc-500">{label}</label>
-      <input type={type} placeholder={placeholder} autoComplete={autoComplete} className={authInputClass} />
+      <input
+        name={name}
+        type={type}
+        value={value}
+        required={required}
+        disabled={disabled}
+        placeholder={placeholder}
+        autoComplete={autoComplete}
+        onChange={(event) => onChange?.(event.target.value)}
+        className={authInputClass}
+      />
     </div>
   )
 }

@@ -20,7 +20,7 @@ function composePromptWithSpeech(baseText: string, finalTranscript: string, inte
 }
 
 export function useSpeechToText({
-  language = 'pt-BR',
+  language,
   onTranscriptChange,
   getCurrentText,
 }: UseSpeechToTextParams): UseSpeechToTextReturn {
@@ -51,7 +51,11 @@ export function useSpeechToText({
     }
 
     const recognition = new SpeechRecognitionApi()
-    recognition.lang = language
+
+    if (language) {
+      recognition.lang = language
+    }
+
     recognition.continuous = true
     recognition.interimResults = true
 

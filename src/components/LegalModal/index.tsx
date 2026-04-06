@@ -70,7 +70,7 @@ export function LegalModal({ isOpen, title, onClose, children }: LegalModalProps
             onClick={onClose}
             className="rounded-xl bg-[#9ffe9e] px-4 py-2 text-sm font-semibold text-[#006b1f] transition hover:brightness-105"
           >
-            Entendi
+            Got it
           </button>
         </div>
       </div>

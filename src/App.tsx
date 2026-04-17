@@ -1,6 +1,7 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import type { ReactElement } from 'react'
 import { ChatPage } from './screens/ChatPage'
+import { HomePage } from './screens/HomePage'
 import { LoginPage } from './screens/LoginPage'
 import { RegisterPage } from './screens/RegisterPage'
 import { isAuthenticated } from './services/auth'
@@ -25,7 +26,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Navigate to="/chat" replace />} />
+        <Route path="/" element={<HomePage />} />
         <Route
           path="/chat"
           element={
@@ -58,7 +59,7 @@ function App() {
             </PublicOnlyRoute>
           }
         />
-        <Route path="*" element={<Navigate to="/chat" replace />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   )

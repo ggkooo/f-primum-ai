@@ -14,14 +14,14 @@ type ChatPageLocationState = {
 }
 
 const THINKING_UPDATES = [
-  'Thinking... organizing the main symptoms.',
-  'Almost there... connecting relevant clinical patterns.',
-  'Refining the analysis... checking associated signs.',
-  'Structuring the reply... prioritizing clarity and safety.',
-  'Adjusting context... correlating anamnesis details.',
-  'Validating consistency... preparing the next step.',
-  'Finalizing the reasoning... preparing focused questions.',
-  'Consolidating details... the answer is almost ready.',
+  'Pensando... organizando os sintomas principais.',
+  'Quase lá... conectando padrões clínicos relevantes.',
+  'Refinando a análise... avaliando sinais associados.',
+  'Estruturando a resposta... priorizando clareza e segurança.',
+  'Ajustando contexto... correlacionando dados da anamnese.',
+  'Validando consistência... preparando o próximo passo.',
+  'Finalizando o raciocínio... preparando perguntas focadas.',
+  'Consolidando detalhes... a resposta está quase pronta.',
 ]
 
 const PENDING_CONVERSATION_PREFIX = 'pending-new-chat-'
@@ -44,10 +44,10 @@ function toConversationListItem(conversation: ConversationDetails): Conversation
 }
 
 const prompts = [
-  { icon: 'monitor_heart', text: 'Review symptoms and guide the next anamnesis questions' },
-  { icon: 'assignment', text: 'Summarize the clinical picture from the reported symptoms' },
-  { icon: 'warning', text: 'Identify red flags and indicate whether urgent evaluation is needed' },
-  { icon: 'lab_profile', text: 'Organize possible differential hypotheses and recommended next steps' },
+  { icon: 'monitor_heart', text: 'Revisar sintomas e orientar as próximas perguntas da anamnese' },
+  { icon: 'assignment', text: 'Resumir o quadro clínico a partir dos sintomas relatados' },
+  { icon: 'warning', text: 'Identificar sinais de alerta e indicar necessidade de avaliação urgente' },
+  { icon: 'lab_profile', text: 'Organizar hipóteses diferenciais e próximos passos recomendados' },
 ]
 
 export function ChatPage() {
@@ -55,7 +55,7 @@ export function ChatPage() {
   const location = useLocation()
   const params = useParams<{ id?: string }>()
   const authSession = getAuthSession()
-  const userName = authSession?.user.name ?? 'User'
+  const userName = authSession?.user.name ?? 'Usuário'
   const userInitial = userName.charAt(0).toUpperCase() || 'U'
   const { conversations, isLoading: isSidebarLoading, error: sidebarError, refetch: refetchConversations } = useConversations()
   const [chatList, setChatList] = useState<Conversation[]>([])
@@ -143,7 +143,7 @@ export function ChatPage() {
         return
       }
 
-      setConversationError('Unable to load this conversation right now.')
+      setConversationError('Não foi possível carregar esta conversa agora.')
     } finally {
       if (conversationRequestIdRef.current === requestId) {
         setIsConversationLoading(false)
@@ -195,7 +195,7 @@ export function ChatPage() {
         handleNewChat()
       }
     } catch {
-      setConversationError('Unable to delete this conversation right now. Please try again.')
+      setConversationError('Não foi possível excluir esta conversa agora. Tente novamente.')
     }
   }
 
@@ -243,7 +243,7 @@ export function ChatPage() {
           id: pendingMessageId,
           conversation_id: baselineConversation?.id ?? pendingConversationId,
           role: 'model',
-          content: 'Thinking...',
+          content: 'Pensando...',
           created_at: nowIso,
           updated_at: nowIso,
         },
@@ -383,7 +383,7 @@ export function ChatPage() {
 
             return {
               ...item,
-              content: 'Unable to get an AI response right now. Please try again in a moment.',
+              content: 'Não foi possível obter uma resposta da IA agora. Tente novamente em instantes.',
               updated_at: errorNowIso,
             }
           }),
@@ -394,7 +394,7 @@ export function ChatPage() {
       setTypingModelMessageId(null)
       setShowQuickResponsesOptIn(false)
       setChatList((previous) => previous.filter((item) => item.id !== pendingConversationId))
-      setConversationError('Unable to send your message right now.')
+      setConversationError('Não foi possível enviar sua mensagem agora.')
     } finally {
       setIsSendingMessage(false)
     }
@@ -439,8 +439,8 @@ export function ChatPage() {
   }, [stopThinkingCycle])
 
   return (
-    <div className="h-screen w-screen overflow-hidden bg-[#f3f4f6]">
-      <main className="mesh-gradient relative flex h-full w-full overflow-hidden">
+    <div className="h-screen w-screen overflow-hidden bg-[#eef1f4]">
+      <main className="professional-grid relative flex h-full w-full overflow-hidden">
         <Sidebar
           logoSrc={logo}
           appName="PrimumAI"
@@ -449,7 +449,7 @@ export function ChatPage() {
           error={sidebarError}
           userInitial={userInitial}
           userName={userName}
-          planName="Personal Plan"
+          planName="Plano pessoal"
           onNewChat={handleNewChat}
           onChatSelect={handleChatSelect}
           onChatDelete={handleChatDelete}
@@ -472,10 +472,10 @@ export function ChatPage() {
             <MainPanel
               logoSrc={logo}
               appName="PrimumAI"
-              greeting={`Good evening, ${userName}`}
-              title="Can I help you with anything?"
+              greeting={`Boa noite, ${userName}`}
+              title="Como posso ajudar você hoje?"
               prompts={prompts}
-              composerPlaceholder="How can PrimumAI help you today?"
+              composerPlaceholder="Como o PrimumAI pode ajudar você hoje?"
               selectedConversation={selectedConversation}
               isConversationLoading={isConversationLoading}
               conversationError={conversationError}

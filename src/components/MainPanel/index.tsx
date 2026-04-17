@@ -155,8 +155,8 @@ export function MainPanel({
   isSendingMessage = false,
   pendingModelMessageId = null,
   typingModelMessageId = null,
-  thinkingStatus = 'Thinking...',
-  userName = 'You',
+  thinkingStatus = 'Pensando...',
+  userName = 'Você',
   modelName = 'PrimumAI 3',
   quickResponsesEnabled = true,
   showQuickResponsesOptIn = false,
@@ -321,7 +321,7 @@ export function MainPanel({
       <div className="z-10 flex min-h-0 flex-1 flex-col items-center overflow-hidden">
         {isConversationLoading ? (
           <div className="flex w-full flex-1 items-center justify-center">
-            <p className="text-sm font-medium text-zinc-500">Loading conversation...</p>
+            <p className="text-sm font-medium text-zinc-500">Carregando conversa...</p>
           </div>
         ) : null}
 
@@ -368,12 +368,12 @@ export function MainPanel({
                           onClick={() => handleSpeakMessage(message.id, message.content)}
                           disabled={message.id === activeTypingMessageId}
                           className="inline-flex items-center gap-1 rounded-full bg-white/80 px-2.5 py-1 text-[11px] font-medium text-zinc-500 ring-1 ring-zinc-200 transition hover:bg-zinc-50 hover:text-zinc-700 disabled:cursor-not-allowed disabled:opacity-50"
-                          aria-label={speakingMessageId === message.id ? 'Stop reading this answer aloud' : 'Read this answer aloud in Portuguese'}
+                          aria-label={speakingMessageId === message.id ? 'Parar leitura em voz alta desta resposta' : 'Ler esta resposta em voz alta em português'}
                         >
                           <span className="material-symbols-outlined text-[16px]">
                             {speakingMessageId === message.id ? 'stop_circle' : 'volume_up'}
                           </span>
-                          {speakingMessageId === message.id ? 'Stop audio' : 'Read aloud'}
+                          {speakingMessageId === message.id ? 'Parar áudio' : 'Ler em voz alta'}
                         </button>
                       ) : null}
                     </div>
@@ -424,9 +424,9 @@ export function MainPanel({
 
                     {showQuickResponsesOptIn && message.id === pendingModelMessageId ? (
                       <div className="mr-auto mt-3 w-full max-w-[85%] rounded-2xl bg-white p-4 shadow-[0_8px_24px_rgba(24,24,27,0.08)] ring-1 ring-zinc-200/80">
-                        <p className="text-sm font-semibold text-zinc-800">Do you want to enable quick replies?</p>
+                        <p className="text-sm font-semibold text-zinc-800">Deseja ativar respostas rápidas?</p>
                         <p className="mt-1 text-xs text-zinc-500">
-                          You can answer anamnesis questions using buttons for a faster workflow.
+                          Você pode responder as perguntas da anamnese com botões para um fluxo mais rápido.
                         </p>
                         <div className="mt-3 flex items-center gap-2">
                           <button
@@ -434,14 +434,14 @@ export function MainPanel({
                             onClick={() => onQuickResponsesDecision?.(true)}
                             className="rounded-lg bg-emerald-700 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-emerald-800"
                           >
-                            Enable
+                            Ativar
                           </button>
                           <button
                             type="button"
                             onClick={() => onQuickResponsesDecision?.(false)}
                             className="rounded-lg bg-zinc-100 px-3 py-1.5 text-sm font-semibold text-zinc-700 transition hover:bg-zinc-200"
                           >
-                            Not now
+                            Agora não
                           </button>
                         </div>
                       </div>

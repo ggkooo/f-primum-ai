@@ -23,7 +23,7 @@ export function useLogin() {
       const response = await loginRequest(credentials)
       saveAuthSession(mapLoginResponseToSession(response), options.rememberMe)
       return response
-    }, 'Unable to sign in right now.')
+    }, 'Não foi possível entrar agora.')
   }, [execute])
 
   return {

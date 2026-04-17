@@ -308,7 +308,7 @@ export function AnamnesisInteractiveCard({ messageContent, onSubmit }: Anamnesis
             {field.type === 'booleanText' ? (
               <div className="mt-2 space-y-2">
                 <div className="flex gap-2">
-                  {['Yes', 'No'].map((option) => {
+                  {['Sim', 'Não'].map((option) => {
                     const selected = answers[field.id] === option
 
                     return (
@@ -330,7 +330,7 @@ export function AnamnesisInteractiveCard({ messageContent, onSubmit }: Anamnesis
 
                 <textarea
                   rows={3}
-                  placeholder="If you want, add details about the condition or history"
+                  placeholder="Se quiser, adicione detalhes sobre a condição ou histórico"
                   value={typeof answers[`${field.id}-details`] === 'string' ? (answers[`${field.id}-details`] as string) : ''}
                   onChange={(event) => updateAnswer(`${field.id}-details`, event.target.value)}
                   className="w-full rounded-lg border border-zinc-200 bg-white p-2.5 text-sm text-zinc-700 outline-none focus:border-emerald-500"
@@ -347,9 +347,9 @@ export function AnamnesisInteractiveCard({ messageContent, onSubmit }: Anamnesis
           onClick={handleSubmit}
           className="rounded-xl bg-emerald-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-emerald-800"
         >
-          Send answers
+          Enviar respostas
         </button>
-        {submitted ? <p className="text-xs font-medium text-emerald-900">Answers ready to send.</p> : null}
+        {submitted ? <p className="text-xs font-medium text-emerald-900">Respostas prontas para envio.</p> : null}
       </div>
     </div>
   )

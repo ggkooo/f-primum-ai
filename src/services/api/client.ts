@@ -124,14 +124,14 @@ export async function apiRequest<TResponse, TBody = unknown>({
 
     if (!response.ok) {
       const payload = parsedBody as ApiErrorPayload | null
-      const errorMessage = payload?.message || `Request failed with status ${response.status}`
+      const errorMessage = payload?.message || `A requisição falhou com status ${response.status}`
       throw new ApiError(errorMessage, response.status, parsedBody)
     }
 
     return parsedBody as TResponse
   } catch (error) {
     if (error instanceof Error && error.name === 'AbortError') {
-      throw new Error('Request canceled or timed out')
+      throw new Error('Requisição cancelada ou tempo limite excedido')
     }
 
     throw error

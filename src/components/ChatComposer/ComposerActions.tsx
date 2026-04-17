@@ -20,13 +20,13 @@ export function ComposerActions({
       {isListening && (
         <div className="flex items-center gap-2 rounded-full bg-red-50 px-3 py-1 text-xs font-semibold text-red-700" aria-live="polite">
           <span className="h-2 w-2 animate-pulse rounded-full bg-red-500" />
-          Listening...
+          Ouvindo...
         </div>
       )}
       <button
         onClick={onToggleSpeech}
         disabled={!isSpeechSupported}
-        title={isSpeechSupported ? 'Start voice input' : 'Voice input is unavailable in this browser'}
+        title={isSpeechSupported ? 'Iniciar entrada por voz' : 'Entrada por voz indisponivel neste navegador'}
         className={`grid h-9 w-9 place-items-center rounded-full transition hover:bg-zinc-100 disabled:cursor-not-allowed disabled:opacity-40 ${
           isListening ? 'bg-red-100 text-red-700 hover:bg-red-200' : 'text-zinc-500'
         }`}

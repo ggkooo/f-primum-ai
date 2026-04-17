@@ -8,97 +8,97 @@ function TermsOfServiceContent() {
   return (
     <div className="space-y-5">
       <section className="space-y-2">
-        <h3 className="font-display text-base font-semibold text-[#26312b]">1. Acceptance of Terms</h3>
+        <h3 className="font-display text-base font-semibold text-[#26312b]">1. Aceitação dos Termos</h3>
         <p>
-          These Terms of Service govern access to and use of the PrimumAI platform. By creating an account,
-          accessing, or using our services, you confirm that you have read, understood, and agreed to these terms.
+          Estes Termos de Uso regem o acesso e a utilização da plataforma PrimumAI. Ao criar uma conta,
+          acessar ou utilizar nossos serviços, você confirma que leu, compreendeu e concordou com estes termos.
         </p>
         <p>
-          If you use the platform on behalf of a company, you represent that you have authority to bind that
-          organization to these terms.
-        </p>
-      </section>
-
-      <section className="space-y-2">
-        <h3 className="font-display text-base font-semibold text-[#26312b]">2. Account and Security</h3>
-        <p>
-          You are responsible for providing accurate registration information and maintaining the security of your
-          access credentials. Do not share your password with third parties.
-        </p>
-        <p>
-          Activities carried out through your account are your responsibility, including cases caused by improper use
-          due to failure to protect your credentials.
+          Se você utiliza a plataforma em nome de uma empresa, declara que possui autoridade para vincular essa
+          organização a estes termos.
         </p>
       </section>
 
       <section className="space-y-2">
-        <h3 className="font-display text-base font-semibold text-[#26312b]">3. Acceptable Use</h3>
+        <h3 className="font-display text-base font-semibold text-[#26312b]">2. Conta e Segurança</h3>
         <p>
-          Use of the platform must comply with applicable law, copyright rules, third-party privacy rights, and your
-          organization’s internal policies.
+          Você é responsável por fornecer informações cadastrais corretas e por manter a segurança de suas
+          credenciais de acesso. Não compartilhe sua senha com terceiros.
         </p>
         <p>
-          You may not use the service for unlawful activity, abuse engineering, malware distribution, fraud,
-          harassment, or attempts to bypass security mechanisms.
-        </p>
-      </section>
-
-      <section className="space-y-2">
-        <h3 className="font-display text-base font-semibold text-[#26312b]">4. Content and Intellectual Property</h3>
-        <p>
-          You retain ownership of the content you submit for processing. By using the service, you grant us a limited
-          license to process that data for the purpose of providing the service.
-        </p>
-        <p>
-          The platform, trademarks, visual identity, software, and documentation of PrimumAI are protected by
-          intellectual property rights and may not be copied or redistributed without authorization.
+          As atividades realizadas por meio da sua conta são de sua responsabilidade, inclusive em casos de uso
+          indevido por falha na proteção das credenciais.
         </p>
       </section>
 
       <section className="space-y-2">
-        <h3 className="font-display text-base font-semibold text-[#26312b]">5. Availability and Changes</h3>
+        <h3 className="font-display text-base font-semibold text-[#26312b]">3. Uso Aceitável</h3>
         <p>
-          We aim for high availability, but the service may experience temporary downtime due to maintenance,
-          updates, technical incidents, or factors outside our control.
+          O uso da plataforma deve cumprir a legislação aplicável, regras de direitos autorais, direitos de privacidade
+          de terceiros e políticas internas da sua organização.
         </p>
         <p>
-          We may improve, change, or discontinue features to support continuous improvement, security, and legal
-          compliance.
-        </p>
-      </section>
-
-      <section className="space-y-2">
-        <h3 className="font-display text-base font-semibold text-[#26312b]">6. Suspension and Termination</h3>
-        <p>
-          Accounts may be suspended or terminated in the event of a violation of these terms, security risk, legal
-          requirement, or abusive use of platform resources.
-        </p>
-        <p>
-          You may close your account at any time. Data deletion will follow applicable legal deadlines, regulatory
-          obligations, and audit requirements.
+          Não é permitido utilizar o serviço para atividades ilegais, engenharia abusiva, distribuição de malware,
+          fraude, assédio ou tentativas de burlar mecanismos de segurança.
         </p>
       </section>
 
       <section className="space-y-2">
-        <h3 className="font-display text-base font-semibold text-[#26312b]">7. Limitation of Liability</h3>
+        <h3 className="font-display text-base font-semibold text-[#26312b]">4. Conteúdo e Propriedade Intelectual</h3>
         <p>
-          The service is provided as available, and AI-generated results must be reviewed before being used in
-          critical, legal, medical, or financial decisions.
+          Você mantém a titularidade do conteúdo enviado para processamento. Ao utilizar o serviço, concede uma
+          licença limitada para processarmos esses dados com a finalidade de prestar o serviço.
         </p>
         <p>
-          To the fullest extent permitted by law, we are not liable for indirect damages, lost profits, data loss, or
-          business interruption arising from use of the platform.
+          A plataforma, marcas, identidade visual, software e documentação da PrimumAI são protegidos por direitos
+          de propriedade intelectual e não podem ser copiados ou redistribuídos sem autorização.
         </p>
       </section>
 
       <section className="space-y-2">
-        <h3 className="font-display text-base font-semibold text-[#26312b]">8. Changes to These Terms</h3>
+        <h3 className="font-display text-base font-semibold text-[#26312b]">5. Disponibilidade e Alterações</h3>
         <p>
-          These terms may be updated periodically to reflect improvements, legal requirements, or operational changes.
-          When relevant, we will communicate the new version through official channels.
+          Buscamos alta disponibilidade, mas o serviço pode apresentar indisponibilidades temporárias devido a
+          manutenções, atualizações, incidentes técnicos ou fatores fora do nosso controle.
         </p>
         <p>
-          Continued use of the service after the updated version is published constitutes acceptance of the new terms.
+          Podemos aprimorar, alterar ou descontinuar funcionalidades para garantir melhoria contínua, segurança e
+          conformidade legal.
+        </p>
+      </section>
+
+      <section className="space-y-2">
+        <h3 className="font-display text-base font-semibold text-[#26312b]">6. Suspensão e Encerramento</h3>
+        <p>
+          Contas podem ser suspensas ou encerradas em caso de violação destes termos, risco de segurança,
+          exigência legal ou uso abusivo dos recursos da plataforma.
+        </p>
+        <p>
+          Você pode encerrar sua conta a qualquer momento. A exclusão de dados seguirá prazos legais aplicáveis,
+          obrigações reguladoras e requisitos de auditoria.
+        </p>
+      </section>
+
+      <section className="space-y-2">
+        <h3 className="font-display text-base font-semibold text-[#26312b]">7. Limitação de Responsabilidade</h3>
+        <p>
+          O serviço é fornecido conforme disponibilidade, e resultados gerados por IA devem ser revisados antes de
+          serem utilizados em decisões críticas, legais, médicas ou financeiras.
+        </p>
+        <p>
+          Na extensão máxima permitida por lei, não nos responsabilizamos por danos indiretos, lucros cessantes,
+          perda de dados ou interrupção de negócios decorrentes do uso da plataforma.
+        </p>
+      </section>
+
+      <section className="space-y-2">
+        <h3 className="font-display text-base font-semibold text-[#26312b]">8. Alterações destes Termos</h3>
+        <p>
+          Estes termos podem ser atualizados periodicamente para refletir melhorias, exigências legais ou mudanças
+          operacionais. Quando pertinente, comunicaremos a nova versão pelos canais oficiais.
+        </p>
+        <p>
+          O uso continuado do serviço após a publicação da versão atualizada constitui aceitação dos novos termos.
         </p>
       </section>
     </div>
@@ -109,91 +109,92 @@ function PrivacyPolicyContent() {
   return (
     <div className="space-y-5">
       <section className="space-y-2">
-        <h3 className="font-display text-base font-semibold text-[#26312b]">1. Scope of This Policy</h3>
+        <h3 className="font-display text-base font-semibold text-[#26312b]">1. Escopo desta Política</h3>
         <p>
-          This Privacy Policy explains how PrimumAI collects, uses, shares, stores, and protects personal data of
-          users, customers, and visitors to the platform.
+          Esta Política de Privacidade explica como a PrimumAI coleta, utiliza, compartilha, armazena e protege dados
+          pessoais de usuários, clientes e visitantes da plataforma.
         </p>
       </section>
 
       <section className="space-y-2">
-        <h3 className="font-display text-base font-semibold text-[#26312b]">2. Data Collected</h3>
+        <h3 className="font-display text-base font-semibold text-[#26312b]">2. Dados Coletados</h3>
         <p>
-          We may collect registration data such as name, email, company, and authentication information; usage data
-          such as access logs, interactions, IP address, device, and technical metrics; and support data when you
-          contact us.
+          Podemos coletar dados cadastrais como nome, email, empresa e informações de autenticação; dados de uso
+          como logs de acesso, interações, endereço IP, dispositivo e métricas técnicas; e dados de suporte quando
+          você entra em contato.
         </p>
         <p>
-          In corporate environments, additional data may be processed for access control, security, and auditing in
-          accordance with contract terms and legal requirements.
-        </p>
-      </section>
-
-      <section className="space-y-2">
-        <h3 className="font-display text-base font-semibold text-[#26312b]">3. Purposes of Processing</h3>
-        <p>
-          We use data to operate accounts, authenticate users, deliver features, prevent fraud, ensure security,
-          provide support, comply with legal obligations, and improve product performance, quality, and experience.
+          Em ambientes corporativos, dados adicionais podem ser processados para controle de acesso, segurança e
+          auditoria, em conformidade com termos contratuais e exigências legais.
         </p>
       </section>
 
       <section className="space-y-2">
-        <h3 className="font-display text-base font-semibold text-[#26312b]">4. Legal Bases</h3>
+        <h3 className="font-display text-base font-semibold text-[#26312b]">3. Finalidades do Tratamento</h3>
         <p>
-          Processing may occur on the basis of contractual performance, compliance with legal obligations, legitimate
-          interest for service security and improvement, and consent where required.
+          Utilizamos dados para operar contas, autenticar usuários, disponibilizar funcionalidades, prevenir fraudes,
+          garantir segurança, prestar suporte, cumprir obrigações legais e melhorar desempenho, qualidade e
+          experiência do produto.
         </p>
       </section>
 
       <section className="space-y-2">
-        <h3 className="font-display text-base font-semibold text-[#26312b]">5. Data Sharing</h3>
+        <h3 className="font-display text-base font-semibold text-[#26312b]">4. Bases Legais</h3>
         <p>
-          Data may be shared with infrastructure, authentication, monitoring, and support providers acting under
-          contractual instruction and confidentiality obligations.
-        </p>
-        <p>
-          We may also share information when necessary to comply with legal obligations, court orders, or to protect
-          the rights of PrimumAI and third parties.
+          O tratamento pode ocorrer com base na execução contratual, no cumprimento de obrigações legais, no
+          legítimo interesse para segurança e melhoria do serviço e no consentimento quando exigido.
         </p>
       </section>
 
       <section className="space-y-2">
-        <h3 className="font-display text-base font-semibold text-[#26312b]">6. Retention and Security</h3>
+        <h3 className="font-display text-base font-semibold text-[#26312b]">5. Compartilhamento de Dados</h3>
         <p>
-          We retain data for the period necessary to fulfill legitimate purposes, contractual obligations, and legal
-          requirements. After that, data is deleted or anonymized in accordance with internal policies.
+          Dados podem ser compartilhados com provedores de infraestrutura, autenticação, monitoramento e suporte,
+          que atuam sob instrução contratual e obrigações de confidencialidade.
         </p>
         <p>
-          We adopt technical and organizational security measures, including access control, encryption in transit,
-          monitoring, and incident response practices.
-        </p>
-      </section>
-
-      <section className="space-y-2">
-        <h3 className="font-display text-base font-semibold text-[#26312b]">7. Data Subject Rights</h3>
-        <p>
-          Under applicable law, you may request confirmation of processing, access, correction, portability,
-          anonymization, blocking, deletion, and review of automated decisions where applicable.
-        </p>
-        <p>
-          Requests may be made through official support channels and will be handled within legal deadlines, with
-          identity verification when necessary.
+          Também podemos compartilhar informações quando necessário para cumprir obrigações legais, ordens
+          judiciais ou proteger direitos da PrimumAI e de terceiros.
         </p>
       </section>
 
       <section className="space-y-2">
-        <h3 className="font-display text-base font-semibold text-[#26312b]">8. International Transfers</h3>
+        <h3 className="font-display text-base font-semibold text-[#26312b]">6. Retenção e Segurança</h3>
         <p>
-          When international data transfers occur, we adopt appropriate safeguards, such as contractual clauses and
-          security controls compatible with applicable law.
+          Mantemos os dados pelo período necessário para atender finalidades legítimas, obrigações contratuais e
+          exigências legais. Depois disso, os dados são excluídos ou anonimizados conforme políticas internas.
+        </p>
+        <p>
+          Adotamos medidas técnicas e organizacionais de segurança, incluindo controle de acesso, criptografia em
+          trânsito, monitoramento e práticas de resposta a incidentes.
         </p>
       </section>
 
       <section className="space-y-2">
-        <h3 className="font-display text-base font-semibold text-[#26312b]">9. Updates to This Policy</h3>
+        <h3 className="font-display text-base font-semibold text-[#26312b]">7. Direitos do Titular</h3>
         <p>
-          This policy may be updated to reflect legal, technical, and operational changes. We recommend periodic
-          review. For relevant changes, we will communicate through appropriate channels.
+          Nos termos da legislação aplicável, você pode solicitar confirmação de tratamento, acesso, correção,
+          portabilidade, anonimização, bloqueio, exclusão e revisão de decisões automatizadas, quando cabível.
+        </p>
+        <p>
+          As solicitações podem ser feitas pelos canais oficiais de suporte e serão tratadas dentro dos prazos legais,
+          com verificação de identidade quando necessário.
+        </p>
+      </section>
+
+      <section className="space-y-2">
+        <h3 className="font-display text-base font-semibold text-[#26312b]">8. Transferências Internacionais</h3>
+        <p>
+          Quando houver transferências internacionais de dados, adotaremos salvaguardas adequadas, como cláusulas
+          contratuais e controles de segurança compatíveis com a legislação aplicável.
+        </p>
+      </section>
+
+      <section className="space-y-2">
+        <h3 className="font-display text-base font-semibold text-[#26312b]">9. Atualizações desta Política</h3>
+        <p>
+          Esta política pode ser atualizada para refletir mudanças legais, técnicas e operacionais. Recomendamos
+          revisão periódica. Para alterações relevantes, comunicaremos pelos canais adequados.
         </p>
       </section>
     </div>

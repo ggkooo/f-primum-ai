@@ -54,7 +54,7 @@ export function LegalModal({ isOpen, title, onClose, children }: LegalModalProps
             type="button"
             onClick={onClose}
             className="rounded-lg p-1 text-zinc-500 transition hover:bg-zinc-100 hover:text-zinc-700"
-            aria-label="Close modal"
+            aria-label="Fechar modal"
           >
             <span className="material-symbols-outlined">close</span>
           </button>
@@ -70,7 +70,7 @@ export function LegalModal({ isOpen, title, onClose, children }: LegalModalProps
             onClick={onClose}
             className="rounded-xl bg-[#9ffe9e] px-4 py-2 text-sm font-semibold text-[#006b1f] transition hover:brightness-105"
           >
-            Got it
+            Entendi
           </button>
         </div>
       </div>

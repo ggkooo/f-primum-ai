@@ -40,7 +40,7 @@ export function useSpeechToText({
 
   function toggleSpeech() {
     if (!SpeechRecognitionApi) {
-      setSpeechError('Voice input is not supported in this browser.')
+      setSpeechError('Entrada por voz não é suportada neste navegador.')
       return
     }
 
@@ -80,7 +80,7 @@ export function useSpeechToText({
     }
 
     recognition.onerror = () => {
-      setSpeechError('Could not transcribe audio. Please try again.')
+      setSpeechError('Não foi possível transcrever o áudio. Tente novamente.')
       setIsListening(false)
     }
 

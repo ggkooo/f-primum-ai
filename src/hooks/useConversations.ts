@@ -35,7 +35,7 @@ export function useConversations(): UseConversationsState {
         }
       } catch {
         if (!cancelled) {
-          setError('Unable to load conversations.')
+          setError('Não foi possível carregar as conversas.')
         }
       } finally {
         if (!cancelled) {
@@ -59,7 +59,7 @@ export function useConversations(): UseConversationsState {
       const nextConversations = await fetchConversations()
       setConversations(nextConversations)
     } catch {
-      setError('Unable to load conversations.')
+      setError('Não foi possível carregar as conversas.')
     } finally {
       setIsLoading(false)
     }

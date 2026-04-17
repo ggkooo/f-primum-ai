@@ -7,7 +7,7 @@ export function useRegister() {
   const { execute, isLoading, error } = useAsyncAction()
 
   const register = useCallback(async (payload: RegisterRequest) => {
-    return execute(() => registerRequest(payload), 'Unable to create your account right now.')
+    return execute(() => registerRequest(payload), 'Não foi possível criar sua conta agora.')
   }, [execute])
 
   return {

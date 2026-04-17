@@ -5,7 +5,7 @@ type AuthRememberMeProps = {
   onChange?: (checked: boolean) => void
 }
 
-export function AuthRememberMe({ label = 'Remember me for 30 days', checked, disabled, onChange }: AuthRememberMeProps) {
+export function AuthRememberMe({ label = 'Lembrar de mim por 30 dias', checked, disabled, onChange }: AuthRememberMeProps) {
   return (
     <label className="flex cursor-pointer items-center gap-3 pt-1">
       <input

@@ -26,6 +26,27 @@ body {
 	background-color: #ffffff;
 }
 
+.professional-grid {
+	background:
+		linear-gradient(to right, rgba(15, 23, 42, 0.02) 1px, transparent 1px),
+		linear-gradient(to bottom, rgba(15, 23, 42, 0.02) 1px, transparent 1px),
+		radial-gradient(at 15% 20%, rgba(220, 252, 231, 0.72) 0%, transparent 45%),
+		radial-gradient(at 85% 10%, rgba(219, 234, 254, 0.7) 0%, transparent 45%),
+		#eef1f4;
+	background-size: 44px 44px, 44px 44px, auto, auto, auto;
+}
+
+.soft-glow {
+	background: radial-gradient(circle, rgba(2, 132, 199, 0.16) 0%, rgba(16, 185, 129, 0.13) 45%, transparent 72%);
+	filter: blur(40px);
+	opacity: 0.8;
+	animation: drift-glow 15s ease-in-out infinite;
+}
+
+.soft-glow.delay {
+	animation-delay: 2.4s;
+}
+
 .ai-sphere {
 	background: radial-gradient(circle, #9ffe9e 0%, #006b1f 100%);
 	filter: blur(38px);
@@ -83,5 +104,15 @@ body {
 	}
 	50% {
 		transform: translate3d(0, -14px, 0) scale(1.06);
+	}
+}
+
+@keyframes drift-glow {
+	0%,
+	100% {
+		transform: translate3d(0, 0, 0) scale(1);
+	}
+	50% {
+		transform: translate3d(0, -18px, 0) scale(1.08);
 	}
 }

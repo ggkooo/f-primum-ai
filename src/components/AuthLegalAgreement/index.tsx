@@ -18,7 +18,7 @@ export function AuthLegalAgreement({ onOpenDocument, checked, disabled, onChange
         className="mt-0.5 h-4 w-4 shrink-0 rounded accent-[#006b1f]"
       />
       <span className="text-xs leading-relaxed text-zinc-500">
-        I agree to the{' '}
+        Eu concordo com os{' '}
         <button
           type="button"
           className="font-medium text-[#006b1f] hover:underline"
@@ -28,9 +28,9 @@ export function AuthLegalAgreement({ onOpenDocument, checked, disabled, onChange
             onOpenDocument('terms')
           }}
         >
-          Terms of Service
+          Termos de Uso
         </button>{' '}
-        and{' '}
+        e com a{' '}
         <button
           type="button"
           className="font-medium text-[#006b1f] hover:underline"
@@ -40,7 +40,7 @@ export function AuthLegalAgreement({ onOpenDocument, checked, disabled, onChange
             onOpenDocument('privacy')
           }}
         >
-          Privacy Policy
+          Política de Privacidade
         </button>
       </span>
     </label>

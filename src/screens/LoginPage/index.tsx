@@ -32,7 +32,7 @@ export function LoginPage() {
         rememberMe,
       })
 
-      navigate('/')
+      navigate('/chat')
     } catch {
       // The hook already updates error state for the UI.
     }
@@ -43,8 +43,8 @@ export function LoginPage() {
       <AuthHeader
         logoSrc={logo}
         appName="PrimumAI"
-        title="Welcome back"
-        subtitle="Sign in to continue to PrimumAI."
+        title="Bem-vindo de volta"
+        subtitle="Entre para continuar no PrimumAI."
       />
 
       <AuthCard>
@@ -62,9 +62,9 @@ export function LoginPage() {
           />
 
           <AuthPasswordField
-            label="Password"
+            label="Senha"
             name="password"
-            placeholder="Your password"
+            placeholder="Sua senha"
             autoComplete="current-password"
             labelAction={<AuthForgotPassword />}
             value={password}
@@ -74,7 +74,7 @@ export function LoginPage() {
           />
 
           <AuthRememberMe
-            label="Remember me for 15 days"
+            label="Lembrar de mim por 15 dias"
             checked={rememberMe}
             disabled={isLoading}
             onChange={setRememberMe}
@@ -83,14 +83,14 @@ export function LoginPage() {
           {error ? <p className="text-xs font-medium text-red-600">{error}</p> : null}
 
           <AuthSubmitButton icon="login" isLoading={isLoading}>
-            Sign In
+            Entrar
           </AuthSubmitButton>
         </form>
 
         <AuthSeparator />
         <AuthSwitchLink
-          question="Don't have an account?"
-          actionLabel="Create one"
+          question="Não tem conta?"
+          actionLabel="Criar conta"
           onAction={() => navigate('/register')}
         />
       </AuthCard>

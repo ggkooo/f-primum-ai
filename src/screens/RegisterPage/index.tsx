@@ -28,19 +28,19 @@ export function RegisterPage() {
   const [acceptedLegalTerms, setAcceptedLegalTerms] = useState(false)
   const [formError, setFormError] = useState<string | null>(null)
 
-  const modalTitle = activeDocument === 'terms' ? 'Terms of Service' : 'Privacy Policy'
+  const modalTitle = activeDocument === 'terms' ? 'Termos de Uso' : 'Política de Privacidade'
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     setFormError(null)
 
     if (password !== passwordConfirmation) {
-      setFormError('Password confirmation does not match.')
+      setFormError('A confirmação de senha não confere.')
       return
     }
 
     if (!acceptedLegalTerms) {
-      setFormError('You must accept the Terms of Service and Privacy Policy to create an account.')
+      setFormError('Você precisa aceitar os Termos de Uso e a Política de Privacidade para criar a conta.')
       return
     }
 
@@ -63,17 +63,17 @@ export function RegisterPage() {
       <AuthHeader
         logoSrc={logo}
         appName="PrimumAI"
-        title="Create your account"
-        subtitle="Start your journey with PrimumAI today."
+        title="Crie sua conta"
+        subtitle="Comece sua jornada com o PrimumAI hoje."
       />
 
       <AuthCard>
         <form className="space-y-4" onSubmit={handleSubmit}>
           <AuthTextField
-            label="Full name"
+            label="Nome completo"
             type="text"
             name="name"
-            placeholder="Your full name"
+            placeholder="Seu nome completo"
             autoComplete="name"
             value={fullName}
             required
@@ -92,9 +92,9 @@ export function RegisterPage() {
             onChange={setEmail}
           />
           <AuthPasswordField
-            label="Password"
+            label="Senha"
             name="password"
-            placeholder="Min. 8 characters"
+            placeholder="Min. 8 caracteres"
             autoComplete="new-password"
             value={password}
             required
@@ -102,9 +102,9 @@ export function RegisterPage() {
             onChange={setPassword}
           />
           <AuthPasswordField
-            label="Confirm password"
+            label="Confirmar senha"
             name="password_confirmation"
-            placeholder="Repeat your password"
+            placeholder="Repita sua senha"
             autoComplete="new-password"
             value={passwordConfirmation}
             required
@@ -126,16 +126,16 @@ export function RegisterPage() {
             icon="person_add"
             isLoading={isLoading}
             disabled={!acceptedLegalTerms}
-            loadingText="Creating account..."
+            loadingText="Criando conta..."
           >
-            Create Account
+            Criar conta
           </AuthSubmitButton>
         </form>
 
         <AuthSeparator />
         <AuthSwitchLink
-          question="Already have an account?"
-          actionLabel="Sign in"
+          question="Já tem uma conta?"
+          actionLabel="Entrar"
           onAction={() => navigate('/login')}
         />
       </AuthCard>

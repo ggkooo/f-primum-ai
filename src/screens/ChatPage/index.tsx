@@ -4,7 +4,7 @@ import logo from '../../assets/img/logo.png'
 import { MainPanel } from '../../components/MainPanel'
 import { Sidebar } from '../../components/Sidebar'
 import { useConversations } from '../../hooks'
-import { createChat } from '../../services/chat'
+import { createChat, normalizeConversationDetails, normalizeModelMessageContent } from '../../services/chat'
 import { deleteConversationById, getConversationById, getConversations } from '../../services/conversations'
 import { clearAuthSession, getAuthSession } from '../../services/auth'
 import type { Conversation, ConversationDetails } from '../../types'
@@ -137,7 +137,7 @@ export function ChatPage() {
         return
       }
 
-      setSelectedConversation(response.data.conversation)
+      setSelectedConversation(normalizeConversationDetails(response.data.conversation))
     } catch {
       if (conversationRequestIdRef.current !== requestId) {
         return
@@ -314,6 +314,7 @@ export function ChatPage() {
       stopThinkingCycle()
 
       const finalNowIso = new Date().toISOString()
+      const normalizedResponseContent = normalizeModelMessageContent(response.data.response)
       const bootstrapConversation: ConversationDetails = {
         id: response.data.conversation_id,
         user_id: optimisticConversation.user_id,
@@ -334,7 +335,7 @@ export function ChatPage() {
           return {
             ...item,
             conversation_id: response.data.conversation_id,
-            content: response.data.response,
+            content: normalizedResponseContent,
             updated_at: finalNowIso,
           }
         }),
@@ -413,7 +414,7 @@ export function ChatPage() {
     const bootstrapConversation = routeState?.bootstrapConversation
 
     if (routeConversationId && bootstrapConversation?.id === routeConversationId) {
-      setSelectedConversation(bootstrapConversation)
+      setSelectedConversation(normalizeConversationDetails(bootstrapConversation))
       setIsConversationLoading(false)
       setConversationError(null)
       return
